@@ -27,8 +27,8 @@ CACHE_DIR=$2
 GRAPHVIZ_CACHE_DIR="$CACHE_DIR/heroku-graphviz/"
 GRAPHVIZ_DIR="$BUILD_DIR/vendor/builds/heroku-graphviz/"
 
-mkdir -p $GRAPHVIZ_DIR 
-mkdir -p $GRAPHVIZ_CACHE_DIR 
+mkdir -p $GRAPHVIZ_DIR
+mkdir -p $GRAPHVIZ_CACHE_DIR
 
 cp "$BUILDPACK_DIR/version" $GRAPHVIZ_DIR
 
@@ -48,9 +48,9 @@ else
 
   echo "-----> Fetching and installing graphviz"
   cd $WGET_BUILD
-  curl -O http://www.graphviz.org/pub/graphviz/stable/SOURCES/graphviz-2.28.0.tar.gz
-  tar zxvf graphviz-2.28.0.tar.gz
-  cd graphviz-2.28.0
+  curl -O http://www.graphviz.org/pub/graphviz/stable/SOURCES/graphviz-2.38.0.tar.gz
+  tar zxvf graphviz-2.38.0.tar.gz
+  cd graphviz-2.38.0
   ./configure --prefix=$GRAPHVIZ_DIR --with-pangocairo
   make
   make install
